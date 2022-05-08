@@ -13,7 +13,7 @@
 <div class="w-full">
     <h2 class="text-center text-white font-bold bg-blue-800 text-2xl py-2">Reticula de Materias</h2>
     <div class="w-full">
-        <nav class="bg-blue-100 text-lg font-semibold hidden lg:block">
+        <nav class="bg-blue-100 text-lg font-semibold overflow-x-auto lg:block">
             <ul class="nav nav-tabs flex flex-row justify-between text-center">
                 <li class="nav-item p-2">
                     <a href="#tab-semestre1" class="nav-link text-black active hover:text-indigo-900"
@@ -56,17 +56,6 @@
             </ul>
         </nav>
 
-        <div class="flex justify-center lg:hidden">
-            <select class="form-select appearance-none block w-full p-2 text-black bg-white bg-clip-padding bg-no-repeat border border-solid
-                 border-gray-300 rounded focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
-                <option selected value="1">1er Semestre</option>
-                <option value="2">2do Semestre</option>
-                <option value="3">3er Semestre</option>
-                <option value="4">4to Semestre</option>
-            </select>
-        </div>
-
-
         <div class="tab-content bg-white" id="tabs-tabContentFill">
             <div class="tab-pane fade show active" id="tab-semestre1" role="tabpanel"
                 aria-labelledby="tabs-home-tabFill">
@@ -84,32 +73,60 @@
                     ?>
             </div>
             <div class="tab-pane fade" id="tab-semestre3" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
-                Tab 3
+                <?php
+                        if(isset($imprimir3erSemestre)){
+                            echo $imprimir3erSemestre;
+                        }
+                    ?>
             </div>
             <div class="tab-pane fade" id="tab-semestre4" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
-                Tab 4
+                <?php
+                        if(isset($imprimir4toSemestre)){
+                            echo $imprimir4toSemestre;
+                        }
+                    ?>
             </div>
             <div class="tab-pane fade" id="tab-semestre5" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
-                Tab 5
+                <?php
+                        if(isset($imprimir5toSemestre)){
+                            echo $imprimir5toSemestre;
+                        }
+                    ?>
             </div>
             <div class="tab-pane fade" id="tab-semestre6" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
-                Tab 6
+                <?php
+                        if(isset($imprimir6toSemestre)){
+                            echo $imprimir6toSemestre;
+                        }
+                    ?>
             </div>
             <div class="tab-pane fade" id="tab-semestre7" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
-                Tab 7
+                <?php
+                        if(isset($imprimir7moSemestre)){
+                            echo $imprimir7moSemestre;
+                        }
+                    ?>
             </div>
             <div class="tab-pane fade" id="tab-semestre8" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
-                Tab 8
+                <?php
+                        if(isset($imprimir8voSemestre)){
+                            echo $imprimir8voSemestre;
+                        }
+                    ?>
             </div>
             <div class="tab-pane fade" id="tab-semestre9" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
-                Tab 9
+                <?php
+                        if(isset($imprimir9noSemestre)){
+                            echo $imprimir9noSemestre;
+                        }
+                    ?>
             </div>
         </div>
     </div>
 </div>
 
 <!-- nuevo ingreso -->
-<div class="bg-blue-800 py-8">
+<div class="bg-blue-800 pt-9">
     <div class="bg-white grid md:grid-cols-2 py-8 gap-4">
         <div class="flex justify-center items-center">
             <img src="img/IMG_0579.JPG" class="w-4/5 h-auto" alt="">
@@ -135,7 +152,7 @@
 </div>
 
 <!-- especialidades -->
-<div class="bg-blue-800 py-8">
+<div class="bg-blue-800 pt-9">
     <div class="bg-zinc-300 grid md:grid-cols-2 py-8 gap-4">
         <div class="self-center px-4">
             <h2 class="text-center font-bold text-2xl">Especialidades</h2>
@@ -157,10 +174,14 @@
             <img src="img/IMG_0579.JPG" class="w-4/5 h-auto" alt="">
         </div>
     </div>
+    <!-- Sección de materias de especialidad -->
+    <div>
+
+    </div>
 </div>
 
 <!-- servicio social -->
-<div class="bg-blue-800 py-8">
+<div class="bg-blue-800 pt-9">
     <div class="bg-white grid md:grid-cols-2 py-8 gap-4">
         <div class="flex justify-center items-center">
             <img src="img/IMG_0579.JPG" class="w-4/5 h-auto" alt="">
@@ -185,7 +206,7 @@
 </div>
 
 <!-- Sección: Residencias Profesionales. Información relevante acerca de las residencias profesionales. -->
-<div class="bg-blue-800 py-8">
+<div class="bg-blue-800 pt-9">
     <div class="bg-white">
         <img src="img/IMG_07.png" class="w-full" alt="">
         <h2 class=" text-center font-bold text-2xl">Residencias Profesionales</h2>
