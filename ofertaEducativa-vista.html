@@ -13,7 +13,7 @@
 <div class="w-full">
     <h2 class="text-center text-white font-bold bg-blue-800 text-2xl py-2">Reticula de Materias</h2>
     <div class="w-full">
-        <nav class="bg-blue-100 text-lg font-semibold flex lg:block">
+        <nav class="bg-blue-100 text-lg font-semibold hidden lg:block">
             <ul class="nav nav-tabs flex flex-row justify-between text-center">
                 <li class="nav-item p-2">
                     <a href="#tab-semestre1" class="nav-link text-black active hover:text-indigo-900"
@@ -55,25 +55,33 @@
                 </li>
             </ul>
         </nav>
+
+        <div class="flex justify-center lg:hidden">
+            <select class="form-select appearance-none block w-full p-2 text-black bg-white bg-clip-padding bg-no-repeat border border-solid
+                 border-gray-300 rounded focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                <option selected value="1">1er Semestre</option>
+                <option value="2">2do Semestre</option>
+                <option value="3">3er Semestre</option>
+                <option value="4">4to Semestre</option>
+            </select>
+        </div>
+
+
         <div class="tab-content bg-white" id="tabs-tabContentFill">
             <div class="tab-pane fade show active" id="tab-semestre1" role="tabpanel"
                 aria-labelledby="tabs-home-tabFill">
-                <div class="grid grid-cols-2 gap-12 mx-8 md:mx-12 my-4 md:grid-cols-3">
-                    <?php
+                <?php
                         if(isset($imprimir1erSemestre)){
                             echo $imprimir1erSemestre;
                         }
                     ?>
-                </div>
             </div>
             <div class="tab-pane fade" id="tab-semestre2" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
-                <div class="grid grid-cols-2 gap-8 mx-4 md:mx-12 my-4 md:grid-cols-3">
-                    <?php
+                <?php
                         if(isset($imprimir2doSemestre)){
                             echo $imprimir2doSemestre;
                         }
                     ?>
-                </div>
             </div>
             <div class="tab-pane fade" id="tab-semestre3" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
                 Tab 3
