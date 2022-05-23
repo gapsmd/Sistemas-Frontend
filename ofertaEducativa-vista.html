@@ -127,20 +127,20 @@
 
 <!-- nuevo ingreso -->
 <div class="bg-blue-800 pt-9">
-    <div class="bg-white grid md:grid-cols-2 py-8 gap-4">
+    <div class="bg-white grid md:grid-cols-2 py-8 px-5 gap-4">
         <div class="flex justify-center items-center">
             <img src="img/IMG_0579.JPG" class="w-4/5 h-auto" alt="">
         </div>
         <div class="self-center px-4">
             <h2 class="text-center font-bold text-2xl">Nuevo Ingreso</h2>
-            <p class="text-left md:text-xl my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+            <p class="text-justify md:text-xl m-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
                 molestias iste provident eius nulla ex
                 repudiandae exercitationem, tempore itaque explicabo porro et voluptas eaque ratione sunt, sapiente
                 saepe a.
             </p>
             <div class="bg-zinc-300 py-2">
                 <h2 class="text-center font-bold text-2xl">Requisitos para presentar el examen:</h2>
-                <ul class="text-left list-disc md:text-xl pl-6 my-5">
+                <ul class="text-left list-disc md:text-xl pl-6 m-5">
                     <li>Certificado de Bachillerato Concluido</li>
                     <li>Fotografía digitalizada reciente</li>
                     <li>Completar el registro de la ficha en <a class="font-semibold"
@@ -153,17 +153,17 @@
 
 <!-- especialidades -->
 <div class="bg-blue-800 pt-9">
-    <div class="bg-zinc-300 grid md:grid-cols-2 py-8 gap-4">
+    <div class="bg-zinc-300 grid md:grid-cols-2 py-8 px-5 gap-4">
         <div class="self-center px-4">
             <h2 class="text-center font-bold text-2xl">Especialidades</h2>
-            <p class="text-left md:text-xl my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+            <p class="text-justify md:text-xl m-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
                 molestias iste provident eius nulla ex
                 repudiandae exercitationem, tempore itaque explicabo porro et voluptas eaque ratione sunt, sapiente
                 saepe a.
             </p>
             <div class="bg-white py-2">
                 <h2 class="text-center font-bold text-2xl">Especialidades que se han impartido:</h2>
-                <ul class="text-left list-disc md:text-xl pl-6 my-5">
+                <ul class="text-left list-disc md:text-xl pl-6 m-5">
                     <li>Programación de dispositivos móviles</li>
                     <li>Programación de sitios web</li>
                     <li>Concurrencia computacional avanzada</li>
@@ -175,27 +175,31 @@
         </div>
     </div>
     <!-- Sección de materias de especialidad -->
-    <div>
-
+    <div class="bg-zinc-300" id="tab-especialidad">
+        <?php
+                if(isset($imprimirEspecialidad)){
+                    echo $imprimirEspecialidad;
+                }
+            ?>
     </div>
 </div>
 
 <!-- servicio social -->
 <div class="bg-blue-800 pt-9">
-    <div class="bg-white grid md:grid-cols-2 py-8 gap-4">
+    <div class="bg-white grid md:grid-cols-2 py-8 px-5 gap-4">
         <div class="flex justify-center items-center">
             <img src="img/IMG_0579.JPG" class="w-4/5 h-auto" alt="">
         </div>
         <div class="self-center px-4">
             <h2 class="text-center font-bold text-2xl">Servicio Social</h2>
-            <p class="text-left md:text-xl my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+            <p class="text-justify md:text-xl m-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
                 molestias iste provident eius nulla ex
                 repudiandae exercitationem, tempore itaque explicabo porro et voluptas eaque ratione sunt, sapiente
                 saepe a.
             </p>
             <div class="bg-zinc-300 py-2">
                 <h2 class="text-center font-bold text-2xl">Consideraciones para cursar el servicio:</h2>
-                <ul class="text-left list-disc md:text-xl pl-6 my-5">
+                <ul class="text-left list-disc md:text-xl pl-6 m-5">
                     <li>Tener el 70% de avance reticular</li>
                     <li>Tener 5 créditos complementarios</li>
                     <li>Requisito tercero</a></li>
@@ -210,12 +214,12 @@
     <div class="bg-white">
         <img src="img/IMG_07.png" class="w-full" alt="">
         <h2 class=" text-center font-bold text-2xl">Residencias Profesionales</h2>
-        <p class="text-left md:text-xl my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+        <p class="text-justify md:text-xl my-5 mx-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
             molestias iste provident eius nulla ex
             repudiandae exercitationem, tempore itaque explicabo porro et voluptas eaque ratione sunt, sapiente
             saepe a.
         </p>
-        <div class="bg-zinc-300 grid md:grid-cols-3 py-2 px-8">
+        <div class="bg-zinc-300 grid md:grid-cols-3 py-5 px-8">
             <div class="flex flex-col items-center">
                 <img class="h-20 items-center my-4" src="img/topicos/programacion-icono.png" alt="">
                 <h3 class="text-center font-bold md:text-xl">Proyectos</h3>
@@ -235,7 +239,7 @@
         <div class="bg-white grid md:grid-cols-2 py-8 gap-4">
             <div class="self-center ml-4 px-4 bg-zinc-300 py-2">
                 <h2 class="text-center font-bold text-2xl">Consideraciones para cursar el servicio:</h2>
-                <ul class="text-left list-disc md:text-xl pl-6 my-5">
+                <ul class="text-left list-disc md:text-xl pl-6 m-5">
                     <li>Tener el 70% de avance reticular</li>
                     <li>Tener 5 créditos complementarios</li>
                     <li>Requisito tercero</a></li>
@@ -246,5 +250,4 @@
             </div>
         </div>
     </div>
-</div>
 </div>
