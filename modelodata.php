@@ -2,9 +2,61 @@
 
 require_once "bd/conexion.php";
 
-function imprimir1erSemestre(){
+function icono($Area){
+    $ruta_img = "";
+    switch($Area){
+        case 'Programacion':
+            $ruta_img = 'img/iconos/programacion.png';
+            break;
+        case 'Asignaturas Comunes':
+            $ruta_img = 'img/iconos/asignaturas-comunes.png';
+            break;
+        case 'Redes':
+            $ruta_img = 'img/iconos/redes.png';
+            break;
+        case 'Bases de datos':
+            $ruta_img = 'img/iconos/bases-datos.png';
+            break;
+        case 'Electronica':
+            $ruta_img = 'img/iconos/electronica.png';
+            break;
+        case 'Ingenieria':
+            $ruta_img = 'img/iconos/ingenieria.png';
+            break;
+        case 'Sistemas operativos':
+            $ruta_img = 'img/iconos/sistemasop.png';
+        break;
+        case 'Calculo':
+            $ruta_img = 'img/iconos/calculo.png';
+        break;
+        case 'Estadistica':
+            $ruta_img = 'img/iconos/estadistica.png';
+        break;
+        case 'Automatas':
+            $ruta_img = 'img/iconos/automatas.png';
+        break;
+        case 'Investigacion':
+            $ruta_img = 'img/iconos/investigacion.png';
+        break;
+        case 'Matematicas Aplicada':
+            $ruta_img = 'img/iconos/algebra.png';
+        break;
+        case 'Web':
+            $ruta_img = 'img/iconos/programacion-web.png';
+        break;
+        case 'Administracion':
+            $ruta_img = 'img/iconos/administracion.png';
+        break;
+        case 'IA':
+            $ruta_img = 'img/iconos/inteligencia-artificial.png';
+        break;
+    }
+    return $ruta_img;
+}
+
+function imprimir($NumeroSemestre){
     $cn = conexion();
-    $sqlQ = "SELECT * FROM materia where semestre_materia='1'";
+    $sqlQ = "SELECT * FROM materia where semestre_materia='$NumeroSemestre'";
     $ResultSet = $cn->query($sqlQ); 
    
     $tabla = "";
@@ -18,21 +70,9 @@ function imprimir1erSemestre(){
             $area_materia = $row['area_materia'];
             $url_materia = $row['url_materia'];
             $url_programa = $row['url_programa'];
-            $ruta_img = '';
+            $ruta_img = icono($area_materia);
 
-            switch($area_materia){
-                case 'Programación':
-                    $ruta_img = 'img/topicos/programacion-icono.png';
-                    break;
-                case 'Asignaturas comunes':
-                    $ruta_img = 'img/topicos/ing-software-icono.png';
-                    break;
-                default:
-                    $ruta_img = 'img/topicos/programacion-web-icono.png';
-                    break;
-            }
-
-// Cuadro de materia
+    // Cuadro de materia
             $tabla .= "<div class='grid grid-cols-1 justify-items-center rounded-md shadow-lg bg-zinc-300'>";
                 $tabla .= "<h1 class='text-white self-start rounded-md text-center w-full font-semibold py-3 bg-blue-700'>$nombre_materia</h1>";
                 $tabla .= "<div class='flex items-center '>";
@@ -44,7 +84,7 @@ function imprimir1erSemestre(){
                                 data-bs-toggle='modal' data-bs-target='#modalReticula" .$id_materia ."'aria-label='Close'>Ver más</a>";
                 $tabla .= "</div>";
             $tabla .= "</div>";
-// Modal de "Ver más"
+    // Modal de "Ver más"
             $tabla .= "<div class='modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto'
                         id='modalReticula" .$id_materia ."' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='modal' aria-hidden='true'>";
                 $tabla .= "<div class='modal-dialog modal-xl relative w-auto'>";
@@ -88,244 +128,40 @@ function imprimir1erSemestre(){
     $cn->close();
 }
 
+function imprimir1erSemestre(){
+    return imprimir("1");
+}
+
 function imprimir2doSemestre(){
-    $cn = conexion();
-    $sqlQ = "SELECT * FROM materia where semestre_materia='2'";
-    $ResultSet = $cn->query($sqlQ); 
-   
-    $tabla = "";
-
-    if($ResultSet->num_rows > 0){
-        $tabla .= "<div class='grid grid-cols-2 gap-8 mx-8 md:mx-16 my-4 md:grid-cols-3'>";
-        while($row = $ResultSet->fetch_assoc()){
-            $nombre_materia = $row['nombre_materia'];
-            $descrip_materia = $row['descripcion_materia'];
-
-            $tabla .= "<div class='grid grid-cols-1 justify-items-center rounded-md shadow-lg bg-zinc-300'>";
-            $tabla .= "<h1 class='text-white self-start rounded-md text-center w-full font-semibold py-3 bg-blue-900'>$nombre_materia</h1>";
-            $tabla .= "<p class='mx-4 my-2 hidden md:block'>$descrip_materia</p>";
-            $tabla .= "<div class='flex justify-center items-center'>";
-            $tabla .= "<a class='my-4 p-3 w-24 self-center font-semibold rounded-md bg-blue-600 text-white hover:bg-indigo-900'>Ver más</a>";
-            $tabla .= "</div>";
-            $tabla .= "</div>";
-
-        }
-        $tabla .= "</div>";
-    }
-
-    return $tabla;
-    
-    $cn->close();
+    return imprimir("2");
 }
 
 function imprimir3erSemestre(){
-    $cn = conexion();
-    $sqlQ = "SELECT * FROM materia where semestre_materia='3'";
-    $ResultSet = $cn->query($sqlQ); 
-   
-    $tabla = "";
-
-    if($ResultSet->num_rows > 0){
-        $tabla .= "<div class='grid grid-cols-2 gap-8 mx-8 md:mx-16 my-4 md:grid-cols-3'>";
-        while($row = $ResultSet->fetch_assoc()){
-            $nombre_materia = $row['nombre_materia'];
-            $descrip_materia = $row['descripcion_materia'];
-
-            $tabla .= "<div class='grid grid-cols-1 justify-items-center rounded-md shadow-lg bg-zinc-300'>";
-            $tabla .= "<h1 class='text-white self-start rounded-md text-center w-full font-semibold py-3 bg-blue-900'>$nombre_materia</h1>";
-            $tabla .= "<p class='mx-4 my-2 hidden md:block'>$descrip_materia</p>";
-            $tabla .= "<div class='flex justify-center items-center'>";
-            $tabla .= "<a class='my-4 p-3 w-24 self-center font-semibold rounded-md bg-blue-600 text-white hover:bg-indigo-900'>Ver más</a>";
-            $tabla .= "</div>";
-            $tabla .= "</div>";
-
-        }
-        $tabla .= "</div>";
-    }
-
-    return $tabla;
-    
-    $cn->close();
+    return imprimir("3");
 }
 
 function imprimir4toSemestre(){
-    $cn = conexion();
-    $sqlQ = "SELECT * FROM materia where semestre_materia='4'";
-    $ResultSet = $cn->query($sqlQ); 
-   
-    $tabla = "";
-
-    if($ResultSet->num_rows > 0){
-        $tabla .= "<div class='grid grid-cols-2 gap-8 mx-8 md:mx-16 my-4 md:grid-cols-3'>";
-        while($row = $ResultSet->fetch_assoc()){
-            $nombre_materia = $row['nombre_materia'];
-            $descrip_materia = $row['descripcion_materia'];
-
-            $tabla .= "<div class='grid grid-cols-1 justify-items-center rounded-md shadow-lg bg-zinc-300'>";
-            $tabla .= "<h1 class='text-white self-start rounded-md text-center w-full font-semibold py-3 bg-blue-900'>$nombre_materia</h1>";
-            $tabla .= "<p class='mx-4 my-2 hidden md:block'>$descrip_materia</p>";
-            $tabla .= "<div class='flex justify-center items-center'>";
-            $tabla .= "<a class='my-4 p-3 w-24 self-center font-semibold rounded-md bg-blue-600 text-white hover:bg-indigo-900'>Ver más</a>";
-            $tabla .= "</div>";
-            $tabla .= "</div>";
-
-        }
-        $tabla .= "</div>";
-    }
-
-    return $tabla;
-    
-    $cn->close();
+    return imprimir("4");
 }
 
 function imprimir5toSemestre(){
-    $cn = conexion();
-    $sqlQ = "SELECT * FROM materia where semestre_materia='5'";
-    $ResultSet = $cn->query($sqlQ); 
-   
-    $tabla = "";
-
-    if($ResultSet->num_rows > 0){
-        $tabla .= "<div class='grid grid-cols-2 gap-8 mx-8 md:mx-16 my-4 md:grid-cols-3'>";
-        while($row = $ResultSet->fetch_assoc()){
-            $nombre_materia = $row['nombre_materia'];
-            $descrip_materia = $row['descripcion_materia'];
-
-            $tabla .= "<div class='grid grid-cols-1 justify-items-center rounded-md shadow-lg bg-zinc-300'>";
-            $tabla .= "<h1 class='text-white self-start rounded-md text-center w-full font-semibold py-3 bg-blue-900'>$nombre_materia</h1>";
-            $tabla .= "<p class='mx-4 my-2 hidden md:block'>$descrip_materia</p>";
-            $tabla .= "<div class='flex justify-center items-center'>";
-            $tabla .= "<a class='my-4 p-3 w-24 self-center font-semibold rounded-md bg-blue-600 text-white hover:bg-indigo-900'>Ver más</a>";
-            $tabla .= "</div>";
-            $tabla .= "</div>";
-
-        }
-        $tabla .= "</div>";
-    }
-
-    return $tabla;
-    
-    $cn->close();
+    return imprimir("5");
 }
 
 function imprimir6toSemestre(){
-    $cn = conexion();
-    $sqlQ = "SELECT * FROM materia where semestre_materia='6'";
-    $ResultSet = $cn->query($sqlQ); 
-   
-    $tabla = "";
-
-    if($ResultSet->num_rows > 0){
-        $tabla .= "<div class='grid grid-cols-2 gap-8 mx-8 md:mx-16 my-4 md:grid-cols-3'>";
-        while($row = $ResultSet->fetch_assoc()){
-            $nombre_materia = $row['nombre_materia'];
-            $descrip_materia = $row['descripcion_materia'];
-
-            $tabla .= "<div class='grid grid-cols-1 justify-items-center rounded-md shadow-lg bg-zinc-300'>";
-            $tabla .= "<h1 class='text-white self-start rounded-md text-center w-full font-semibold py-3 bg-blue-900'>$nombre_materia</h1>";
-            $tabla .= "<p class='mx-4 my-2 hidden md:block'>$descrip_materia</p>";
-            $tabla .= "<div class='flex justify-center items-center'>";
-            $tabla .= "<a class='my-4 p-3 w-24 self-center font-semibold rounded-md bg-blue-600 text-white hover:bg-indigo-900'>Ver más</a>";
-            $tabla .= "</div>";
-            $tabla .= "</div>";
-
-        }
-        $tabla .= "</div>";
-    }
-
-    return $tabla;
-    
-    $cn->close();
+    return imprimir("6");
 }
 
 function imprimir7moSemestre(){
-    $cn = conexion();
-    $sqlQ = "SELECT * FROM materia where semestre_materia='7'";
-    $ResultSet = $cn->query($sqlQ); 
-   
-    $tabla = "";
-
-    if($ResultSet->num_rows > 0){
-        $tabla .= "<div class='grid grid-cols-2 gap-8 mx-8 md:mx-16 my-4 md:grid-cols-3'>";
-        while($row = $ResultSet->fetch_assoc()){
-            $nombre_materia = $row['nombre_materia'];
-            $descrip_materia = $row['descripcion_materia'];
-
-            $tabla .= "<div class='grid grid-cols-1 justify-items-center rounded-md shadow-lg bg-zinc-300'>";
-            $tabla .= "<h1 class='text-white self-start rounded-md text-center w-full font-semibold py-3 bg-blue-900'>$nombre_materia</h1>";
-            $tabla .= "<p class='mx-4 my-2 hidden md:block'>$descrip_materia</p>";
-            $tabla .= "<div class='flex justify-center items-center'>";
-            $tabla .= "<a class='my-4 p-3 w-24 self-center font-semibold rounded-md bg-blue-600 text-white hover:bg-indigo-900'>Ver más</a>";
-            $tabla .= "</div>";
-            $tabla .= "</div>";
-
-        }
-        $tabla .= "</div>";
-    }
-
-    return $tabla;
-    
-    $cn->close();
+    return imprimir("7");
 }
 
 function imprimir8voSemestre(){
-    $cn = conexion();
-    $sqlQ = "SELECT * FROM materia where semestre_materia='8'";
-    $ResultSet = $cn->query($sqlQ); 
-   
-    $tabla = "";
-
-    if($ResultSet->num_rows > 0){
-        $tabla .= "<div class='grid grid-cols-2 gap-8 mx-8 md:mx-16 my-4 md:grid-cols-3'>";
-        while($row = $ResultSet->fetch_assoc()){
-            $nombre_materia = $row['nombre_materia'];
-            $descrip_materia = $row['descripcion_materia'];
-
-            $tabla .= "<div class='grid grid-cols-1 justify-items-center rounded-md shadow-lg bg-zinc-300'>";
-            $tabla .= "<h1 class='text-white self-start rounded-md text-center w-full font-semibold py-3 bg-blue-900'>$nombre_materia</h1>";
-            $tabla .= "<p class='mx-4 my-2 hidden md:block'>$descrip_materia</p>";
-            $tabla .= "<div class='flex justify-center items-center'>";
-            $tabla .= "<a class='my-4 p-3 w-24 self-center font-semibold rounded-md bg-blue-600 text-white hover:bg-indigo-900'>Ver más</a>";
-            $tabla .= "</div>";
-            $tabla .= "</div>";
-
-        }
-        $tabla .= "</div>";
-    }
-
-    return $tabla;
-    
-    $cn->close();
+    return imprimir("8");
 }
 
 function imprimir9noSemestre(){
-    $cn = conexion();
-    $sqlQ = "SELECT * FROM materia where semestre_materia='9'";
-    $ResultSet = $cn->query($sqlQ); 
-   
-    $tabla = "";
-
-    if($ResultSet->num_rows > 0){
-        $tabla .= "<div class='grid grid-cols-2 gap-8 mx-8 md:mx-16 my-4 md:grid-cols-3'>";
-        while($row = $ResultSet->fetch_assoc()){
-            $nombre_materia = $row['nombre_materia'];
-            $descrip_materia = $row['descripcion_materia'];
-
-            $tabla .= "<div class='grid grid-cols-1 justify-items-center rounded-md shadow-lg bg-zinc-300'>";
-            $tabla .= "<h1 class='text-white self-start rounded-md text-center w-full font-semibold py-3 bg-blue-900'>$nombre_materia</h1>";
-            $tabla .= "<p class='mx-4 my-2 hidden md:block'>$descrip_materia</p>";
-            $tabla .= "<div class='flex justify-center items-center'>";
-            $tabla .= "<a class='my-4 p-3 w-24 self-center font-semibold rounded-md bg-blue-600 text-white hover:bg-indigo-900'>Ver más</a>";
-            $tabla .= "</div>";
-            $tabla .= "</div>";
-
-        }
-        $tabla .= "</div>";
-    }
-
-    return $tabla;
-    
-    $cn->close();
+    return imprimir("9");
 }
 
 function imprimirEspecialidad(){

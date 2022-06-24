@@ -28,7 +28,7 @@
                             </div>
                             <div class='flex flex-row justify-center'>
                                 <a href='perfilMaestro.php?Valor=".$IdMaestro."' 
-                                class='bg-yellow-200 mb-3 mt-3 p-2 rounded font-semibold'>Ver mas</a>    
+                                class='bg-[#50d71e] mb-3 mt-3 p-2 rounded font-semibold'>Ver mas</a>    
                             </div>
                         </div>";
                 $cont = $cont + "1";
