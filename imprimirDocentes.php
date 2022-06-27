@@ -56,12 +56,15 @@
                                                 <p class='text-justify md:text-xl m-5'>$palabras_maestro</p>
                                                </div>";
                                     $tabla .= "<div class='row-span-2 col-span-2'>
+                                                <h5 class='text-black self-start rounded-md text-center w-full font-semibold py-3'>Información Académica</h5>
                                                 <p class='text-justify md:text-xl m-5'>$informacion_maestro</p>
                                                </div>";
                                     $tabla .= "<div class='row-span-2 col-span-2'>
+                                                <h5 class='text-black self-start rounded-md text-center w-full font-semibold py-3'>Materias que imparte</h5>
                                                 <p class='text-justify md:text-xl m-5'>$materias_maestro</p>
                                                </div>";    
                                     $tabla .= "<div class='row-span-2 col-span-2'>
+                                                <h5 class='text-black self-start rounded-md text-center w-full font-semibold py-3'>Contacto</h5>
                                                 <p class='text-justify md:text-xl m-5'>$contacto_maestro</p>
                                                </div>";       
                             $tabla .= "</div>";
