@@ -45,16 +45,25 @@
                                         </svg>";
                             $tabla .= "</div>";
                             //contenido
-                            $tabla .= "<div class='modal-body relative grid grid-rows-3 grid-col-3 gap-4'>";                              
-                                    $tabla .= "<div class='row-span-2 col-span-1'>
+                            $tabla .= "<div class='modal-body relative grid grid-rows-6 grid-col-3'>";                              
+                                    $tabla .= "<div class='row-span-1 col-span-1'>
                                                 <img class= '' src='img/itver-logo.png' alt='' style='width: 10rem; height: 10rem;'>
                                                </div>";
                                     $tabla .= "<div class='row-span-1 col-span-1'>
                                                     <h1 class='text-black self-start rounded-md text-center w-full font-semibold py-3'>$nombre_maestro</h1>
                                                 </div>";
-                                    $tabla .= "<div class='row-span-2 col-span-2'>
+                                    $tabla .= "<div class='row-span-2 col-span-1'>
                                                 <p class='text-justify md:text-xl m-5'>$palabras_maestro</p>
                                                </div>";
+                                    $tabla .= "<div class='row-span-2 col-span-2'>
+                                                <p class='text-justify md:text-xl m-5'>$informacion_maestro</p>
+                                               </div>";
+                                    $tabla .= "<div class='row-span-2 col-span-2'>
+                                                <p class='text-justify md:text-xl m-5'>$materias_maestro</p>
+                                               </div>";    
+                                    $tabla .= "<div class='row-span-2 col-span-2'>
+                                                <p class='text-justify md:text-xl m-5'>$contacto_maestro</p>
+                                               </div>";       
                             $tabla .= "</div>";
                         $tabla .= "</div>";
                     $tabla .= "</div>";
