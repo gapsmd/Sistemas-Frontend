@@ -46,11 +46,11 @@
                             $tabla .= "</div>";
                             //contenido
                             $tabla .= "<div class='modal-body relative grid grid-rows-6 grid-col-3'>";                              
-                                    $tabla .= "<div class='row-span-1 col-span-1'>
+                                    $tabla .= "<div class='row-span-1 col-span-1 justify-center'>
                                                 <img class= 'rounded-full p-1 bg-blue-400 object-center mt-4' src='img/hector_trujillo.jpg' alt='' style='width: 10rem; height: 10rem;'>
                                                </div>";
-                                    $tabla .= "<div class='row-span-1 col-span-1'>
-                                                    <h1 class='text-black self-start rounded-md text-center w-full font-semibold py-3'>$nombre_maestro</h1>
+                                    $tabla .= "<div class='row-span-1 col-span-1 bg-yellow-400'>
+                                                    <h1 class='text-black self-start rounded-md text-2xl text-center w-full font-semibold py-3'>$nombre_maestro</h1>
                                                 </div>";
                                     $tabla .= "<div class='row-span-2 col-span-1'>
                                                 <p class='text-justify md:text-xl m-5'>$palabras_maestro</p>
