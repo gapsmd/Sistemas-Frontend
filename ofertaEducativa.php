@@ -1,6 +1,6 @@
 <?php
 require_once 'includes/header.html';
-require_once 'modelodata.php';
+require_once 'ofertaEducativa-controller.php';
 $imprimir1erSemestre = imprimir1erSemestre();
 $imprimir2doSemestre = imprimir2doSemestre();
 $imprimir3erSemestre = imprimir3erSemestre();

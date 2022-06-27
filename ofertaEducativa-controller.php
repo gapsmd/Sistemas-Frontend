@@ -87,11 +87,11 @@ function imprimir($NumeroSemestre){
     // Modal de "Ver más"
             $tabla .= "<div class='modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto'
                         id='modalReticula" .$id_materia ."' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='modal' aria-hidden='true'>";
-                $tabla .= "<div class='modal-dialog modal-xl relative w-auto'>";
+                $tabla .= "<div class='modal-dialog modal-lg relative w-auto'>";
                     $tabla .= "<div class='modal-content shadow-lg relative flex flex-col w-full pointer-events-auto bg-zinc-300 bg-clip-padding rounded-md'>";
-                        $tabla .= "<div class='modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md'>";
+                        $tabla .= "<div class='modal-header flex flex-shrink-0 rounded-md items-center bg-blue-700 justify-between p-4 border-b border-gray-200 rounded-t-md'>";
                             // titulo del modal
-                            $tabla .= "<h5 class='text-2xl font-semibold text-yellow-500'>$nombre_materia</h5>";
+                            $tabla .= "<h5 class='text-2xl font-semibold text-white'>$nombre_materia</h5>";
                             //ícono para cerrar modal
                             $tabla .= "<svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' class='cursor-pointer w-8 h-8 p-1' 
                                         preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512' data-bs-dismiss='modal' aria-label='Close'>
@@ -100,8 +100,12 @@ function imprimir($NumeroSemestre){
                                         </svg>";
                         $tabla .= "</div>";
                         //contenido del modal
-                        $tabla .= "<div class='modal-body relative grid lg:grid-cols-2 p-4'>";
+                        $tabla .= "<div class='modal-body relative grid grid-col-1 p-4'>";
                                 $tabla .= "<div class='flex flex-col justify-center items-center'>";
+                                    $tabla .= "<div class='flex flex-col justify-center items-center'>";
+                                        //descripción del modal
+                                        $tabla .= "<p class='text-justify md:text-xl m-5'>$descrip_materia</p>";
+                                    $tabla .= "</div>";
                                     //vídeo a reproducir
                                     //$tabla .= "<iframe class='aspect-video w-4/5 md:w-full' src='$url_materia'
                                     //frameborder='0'></iframe>";
@@ -109,10 +113,6 @@ function imprimir($NumeroSemestre){
                                     frameborder='0'></iframe>";
                                     $tabla .= "<a class='my-4 p-3 w-auto font-semibold rounded-md bg-blue-600 text-white hover:bg-indigo-900'
                                     >Ver programa de la materia</a>";
-                                $tabla .= "</div>";
-                                $tabla .= "<div class='flex flex-col justify-center items-center'>";
-                                    //descripción del modal
-                                    $tabla .= "<p class='text-justify md:text-xl m-5'>$descrip_materia</p>";
                                 $tabla .= "</div>";
                         $tabla .= "</div>";
                     $tabla .= "</div>";
