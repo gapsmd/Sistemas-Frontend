@@ -36,7 +36,7 @@
                             id='modalDocente" .$id_maestro ."' tabindex='-1' aria-labelledby='modal' aria-hidden='true'>";
                     $tabla .= "<div class='modal-dialog relative w-auto pointer-events-none'>";
                         $tabla .= "<div class='modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-zinc-300 bg-clip-padding rounded-md outline-none text-current'>";
-                            $tabla .= "<div class='modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md'>";
+                            $tabla .= "<div class='modal-header flex flex-shrink-0 items-center justify-between p-1 rounded-t-md'>";
                                 //ícono para cerrar modal
                                 $tabla .= "<svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' class='cursor-pointer w-8 h-8 p-1' 
                                         preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512' data-bs-dismiss='modal' aria-label='Close'>
