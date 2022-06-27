@@ -80,7 +80,7 @@ function imprimir($NumeroSemestre){
                     $tabla .= "<p class='text-sm text-justify mx-4 my-2 hidden md:block'>$descrip_materia</p>";
                 $tabla .= "</div>";
                 $tabla .= "<div class='flex justify-center items-center'>";
-                     $tabla .= "<a class='my-4 p-3 w-24 self-center font-semibold rounded-md bg-blue-600 text-white hover:bg-indigo-900'
+                     $tabla .= "<a class='my-4 p-3 w-24 self-center font-semibold rounded-md amarillo text-black hover:bg-blue-600 hover:text-white'
                                 data-bs-toggle='modal' data-bs-target='#modalReticula" .$id_materia ."'aria-label='Close'>Ver más</a>";
                 $tabla .= "</div>";
             $tabla .= "</div>";
@@ -111,7 +111,7 @@ function imprimir($NumeroSemestre){
                                     //frameborder='0'></iframe>";
                                     $tabla .= "<iframe class='aspect-video w-4/5 md:w-full' src='https://www.youtube.com/embed/hw7dMbJWuhc'
                                     frameborder='0'></iframe>";
-                                    $tabla .= "<a class='my-4 p-3 w-auto font-semibold rounded-md bg-blue-600 text-white hover:bg-indigo-900'
+                                    $tabla .= "<a class='my-4 p-3 w-auto font-semibold rounded-md amarillo text-black hover:bg-blue-600 hover:text-white'
                                     >Ver programa de la materia</a>";
                                 $tabla .= "</div>";
                         $tabla .= "</div>";

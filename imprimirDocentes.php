@@ -27,7 +27,7 @@
                                 </div>";
                     $tabla .= "<h1 class='text-black self-start rounded-md text-center w-full font-semibold py-3 text-xl'>$nombre_maestro</h1>";
                     $tabla .= "<div class='flex justify-center items-center'>";
-                         $tabla .= "<a class='mt-2 mb-4 p-3 w-24 self-center font-semibold rounded-md amarillo text-black hover:bg-indigo-900'
+                         $tabla .= "<a class='mt-2 mb-4 p-3 w-24 self-center font-semibold rounded-md amarillo text-black hover:bg-blue-600 hover:text-white'
                                     data-bs-toggle='modal' data-bs-target='#modalDocente" .$id_maestro ."'aria-label='Close'>Ver más</a>";
                     $tabla .= "</div>";
                 $tabla .= "</div>";
