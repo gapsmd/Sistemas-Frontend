@@ -10,6 +10,9 @@
 .azul-medio{
     background-color: #1d4ed8;
 }
+.texto-azul-medio{
+  color: #1d4ed8;  
+}
 .azul-oscuro{
     background-color: #1e40af;
 }
@@ -19,3 +22,4 @@
 .negro-zinc{
     background-color: #18181b;
 }
+
