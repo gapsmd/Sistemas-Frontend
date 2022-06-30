@@ -61,37 +61,40 @@
 
 </div>
 
-<section class="overflow-hidden text-gray-700">
-    <div class="w-full h-full bg-zinc-900 p-16">
-        <div class="flex flex-wrap">
-            <div class="flex flex-wrap w-1/2">
-                <div class="w-1/2 p-1 md:p-2">
-                    <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                        src="img/IMG_01.JPG">
-                </div>
-                <div class="w-1/2 p-1 md:p-2">
-                    <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                        src="img/IMG_01.JPG">
-                </div>
-                <div class="w-full p-1 md:p-2">
-                    <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                        src="img/IMG_01.JPG">
-                </div>
-            </div>
-            <div class="flex flex-wrap w-1/2">
-                <div class="w-full p-1 md:p-2">
-                    <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                        src="img/IMG_01.JPG">
-                </div>
-                <div class="w-1/2 p-1 md:p-2">
-                    <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                        src="img/IMG_01.JPG">
-                </div>
-                <div class="w-1/2 p-1 md:p-2">
-                    <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                        src="img/IMG_01.JPG">
-                </div>
-            </div>
-        </div>
+<!-- sección de galería -->
+<div class="bg-zinc-900 py-12">
+    <div class="flex flex-row space-x-4">
+        <img src="img/IMG_0719.JPG" class="h-32 cursor-pointer rounded-lg" alt="Nature" onclick="myFunction(this);">
+        <img src="img/IMG_0321.JPG" class="h-32 cursor-pointer rounded-lg" alt="Frase" onclick="myFunction(this);">
+        <img src="img/IMG_0323.JPG" class="h-32 cursor-pointer rounded-lg" alt="Pasillos" onclick="myFunction(this);">
+        <img src="img/IMG_02.JPG" class="h-32 cursor-pointer rounded-lg" alt="Estudiantes" onclick="myFunction(this);">
+        <img src="img/Servicio social-3.jpg" class="h-32 cursor-pointer rounded-lg" alt="Código" onclick="myFunction(this);">
     </div>
-</section>
+
+    <div class="container flex flex-row justify-center items-center py-12 text-center">
+        <!-- Close the image -->
+        <span onclick="this.parentElement.style.display='none'" id="closebtn" class="text-4xl text-white cursor-pointer">&times;</span>
+        <!-- Expanded image -->
+        <img id="expandedImg" class="center" style="width:60%">
+        <!-- Image text -->
+        <div id="imgtext" class="self-end text-white text-2xl"></div>
+    </div>
+</div>
+
+<script>
+    function myFunction(imgs) {
+        // la imagen en cuestión
+        var expandImg = document.getElementById("expandedImg");
+        // texto de la imagen
+        var imgText = document.getElementById("imgtext");
+        // botón de close
+        var closebtn = document.getElementById("closebtn");
+        // Use the same src in the expanded image as the image being clicked on from the grid
+        expandImg.src = imgs.src;
+        // Use the value of the alt attribute of the clickable image as text inside the expanded image
+        imgText.innerHTML = imgs.alt;
+        // Show the container element (hidden with CSS)
+        expandImg.parentElement.style.display = "block";
+        closebtn.parentElement.style.display = "block";
+    }
+</script>
